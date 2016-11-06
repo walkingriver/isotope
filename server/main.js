@@ -23,6 +23,7 @@ app.on('ready', _ => {
   if (process.env.WATCH) {
     mainWindow.loadURL('http://localhost:8100');
   } else {
-    mainWindow.loadURL('file://www/index.html');
+    console.log(`Trying to open file://${__dirname}/../www/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/../www/index.html`);
   }
 });

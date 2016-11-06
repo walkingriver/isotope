@@ -14,7 +14,8 @@
     "run:before": "build",
     "serve-no-browser": "ionic serve -b",
     "watch-electron": "npm-run-all -p serve-no-browser start-watch-electron",
-    "start-watch-electron": "WATCH=true electron ."
+    "start-watch-electron": "WATCH=true electron .",
+    "electron": "npm run build && electron ."
   },
   "dependencies": {
     "@angular/common": "2.1.1",
