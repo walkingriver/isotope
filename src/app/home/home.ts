@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { Sentinel } from '../../providers/sentinel';
+import { SentinelService } from '../core/sentinel-service';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
-  providers: [Sentinel]
+  providers: [SentinelService]
 })
 export class HomePage {
   service: any;
   messages = [];
 
-  constructor(public navCtrl: NavController, sentinelService: Sentinel) {
+  constructor(public navCtrl: NavController, sentinelService: SentinelService) {
 
     this.service = sentinelService;
   }

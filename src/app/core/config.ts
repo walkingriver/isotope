@@ -4,5 +4,4 @@ function isHeroku()
     return window.location.hostname.indexOf('herokuapp.com') > 0;
 }
 
-export const SERVER_URL = isHeroku() ? '/' : 'http://conveyantsentry.azurewebsites.net/api';
-export const MESSAGE_URL = SERVER_URL + '/message/list/';
+export const serverUrl = isHeroku() ? '/' : 'http://conveyantsentry.azurewebsites.net/api';

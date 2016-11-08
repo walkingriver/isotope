@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import { SERVER_URL } from './config';
+import { serverUrl } from './config';
 
 /*
   Generated class for the Sentinel provider.
@@ -12,15 +12,15 @@ import { SERVER_URL } from './config';
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class Sentinel {
+export class SentinelService {
 
   constructor(public http: Http) {
-    console.log('Hello Sentinel Provider');
+    console.log('Hello SentinelService Provider');
     this.http = http;
   }
 
   findAll() {
-    const messagesUrl = SERVER_URL + '/message/list/';
+    const messagesUrl = serverUrl + '/message/list/';
     return this.http.get(messagesUrl)
       .map(res => res.json())
       .catch(this.handleError);
