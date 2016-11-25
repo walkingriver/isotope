@@ -1,18 +1,12 @@
 {
-  "name": "ionic-hello-world",
+  "name": "isotope",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "main": "server/main.js",
   "private": true,
   "scripts": {
     "build": "ionic-app-scripts build",
-    "watch": "ionic-app-scripts watch",
-    "serve:before": "watch",
-    "emulate:before": "build",
-    "deploy:before": "build",
-    "build:before": "build",
-    "run:before": "build",
-    "serve-no-browser": "ionic serve -b",
+    "ionic:serve": "ionic-app-scripts serve",
     "watch-electron": "npm-run-all -p serve-no-browser start-watch-electron",
     "start-watch-electron": "WATCH=true electron .",
     "electron": "npm run build && electron ."
@@ -27,16 +21,16 @@
     "@angular/platform-browser": "2.1.1",
     "@angular/platform-browser-dynamic": "2.1.1",
     "@angular/platform-server": "2.1.1",
-    "@ionic/storage": "1.1.6",
+    "@ionic/storage": "^1.1.6",
     "electron": "^1.4.5",
-    "ionic-angular": "2.0.0-rc.2",
-    "ionic-native": "2.2.3",
-    "ionicons": "3.0.0",
+    "ionic-angular": "^2.0.0-rc.2",
+    "ionic-native": "^2.2.3",
+    "ionicons": "^3.0.0",
     "rxjs": "5.0.0-beta.12",
-    "zone.js": "0.6.21"
+    "zone.js": "~0.6.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.39",
+    "@ionic/app-scripts": "^0.0.45",
     "npm-run-all": "^3.1.1",
     "typescript": "2.0.6"
   },
