@@ -1,6 +1,7 @@
 {
   "name": "m1",
   "app_id": "",
+  "gulpStartupTasks": ["sass", "watch"],
   "v2": true,
   "typescript": true
 }

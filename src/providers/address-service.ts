@@ -15,7 +15,7 @@ export interface Address {
 
 @Injectable()
 export class AddressService {
-  private addresses: Address[];
+  private addresses: Address[] = [];
 
   constructor(public http: Http) {
     this.addresses.push({id: 1, name: 'Home', address1: '315 Muchado Hill Rd', address2: '', city:'Alton', state: 'NH', zip: '03809'});
