@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Address, AddressService } from '../../providers/address-service';
-import { AddressDetailPage } from '../../pages/address-detail/address-detail';
+import { Address, AddressService } from '../core/address-service';
+import { AddressDetailPage } from '../address-detail/address-detail';
 
 @Component({
   selector: 'page-address-list',
