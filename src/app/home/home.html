@@ -4,24 +4,31 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Home
+      Isotope
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="gotoSetup()">
         <ion-icon name="options"></ion-icon>
       </button>
-    </ion-buttons>  </ion-navbar>
+    </ion-buttons>
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
 
-  <ul>
-    <li *ngFor="let msg of messages.Entities">
-      {{msg['Details']}}
-    </li>
-  </ul>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-80 offset-10>
+        <div class="wr-well">
+          <h1>The world is your oyster</h1>
+          <h6>Make sure emergency services can always find you.</h6>
+        </div>
+        <ion-list>
+          <ion-item *ngFor="let msg of messages.Entities">
+            {{msg['Details']}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
