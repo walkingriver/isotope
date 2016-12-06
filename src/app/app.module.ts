@@ -3,15 +3,17 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from './home/home';
 import { AddressListPage } from './address-list/address-list';
-import { AddressDetailPage } from '../pages/address-detail/address-detail';
-import { SentinelService } from './core/sentinel-service';
+import { AddressDetailPage } from './address-detail/address-detail';
+import { SetupPage } from './setup/setup';
+// import { SentinelService } from './core/sentinel-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    AddressDetailPage,
     AddressListPage,
-    AddressDetailPage
+    HomePage,
+    SetupPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -19,9 +21,10 @@ import { SentinelService } from './core/sentinel-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    AddressDetailPage,
     AddressListPage,
-    AddressDetailPage
+    HomePage,
+    SetupPage
   ],
   providers: []
 })
