@@ -15,20 +15,20 @@
 </ion-header>
 
 <ion-content padding>
-
   <ion-grid>
     <ion-row>
       <ion-col width-80 offset-10>
         <div class="wr-well">
-          <h1>The world is your oyster</h1>
-          <h6>Make sure emergency services can always find you.</h6>
+          <h1>Travel where you wish</h1>
+          <h5>But make sure emergency services can always find you.</h5>
         </div>
-        <ion-list>
-          <ion-item *ngFor="let msg of messages.Entities">
-            {{msg['Details']}}
-          </ion-item>
-        </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button large full light>Set your location now</button>
+  </ion-toolbar>
+</ion-footer>
