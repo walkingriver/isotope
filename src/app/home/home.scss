@@ -1,19 +1,10 @@
 page-home {
  ion-content {
-     background: url(../assets/images/east-road-sign.jpg) no-repeat center center fixed;
+     background: url(../assets/images/home.jpg) no-repeat center center fixed;
      background-size: cover;
 
      ion-grid {
-        margin-top: 10px;
+        margin-top: 50px;
      }
  }
-
- .wr-well {
-     background-color: #fff;
-     opacity: 0.7;
-     border-top-left-radius: 6px;
-     border-top-right-radius: 6px;
-     padding: 12px;
- }
-
 }
