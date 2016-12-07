@@ -9,7 +9,7 @@ import { AddressDetailPage } from '../address-detail/address-detail';
   providers: [AddressService]
 })
 export class AddressListPage {
-  private _addressService: AddressService;
+    private _addressService: AddressService;
   private nav: NavController;
   private addresses: Address[];
 

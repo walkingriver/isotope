@@ -19,36 +19,23 @@
     <ion-row>
       <ion-col width-80 offset-10>
         <div class="wr-well">
-          <h1>Travel where you wish</h1>
+          <h1>Travel where you want</h1>
           <h6>Make sure emergency services can always find you. Select your current location below.</h6>
         </div>
         <ion-slides [options]="slideOptions">
-          <ion-slide>
-            <h1>Slide 1</h1>
+          <ion-slide *ngFor="let address of addresses" (click)="selectLocation(address)">
+            <ion-chip>
+              <ion-icon [name]="address.icon"></ion-icon>
+              <ion-label color="light">{{address.name}}, {{address.city}}, {{address.state}}
+              </ion-label>
+            </ion-chip>
           </ion-slide>
-          <ion-slide>
-            <h1>Slide 2</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 3</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 4</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 5</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 6</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 7</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 8</h1>
-          </ion-slide>
-          <ion-slide>
-            <h1>Slide 9</h1>
+          <ion-slide (click)="newLocation()">
+            <ion-chip>
+              <ion-icon name="add"></ion-icon>
+              <ion-label color="light">Create New...
+              </ion-label>
+            </ion-chip>
           </ion-slide>
         </ion-slides>
       </ion-col>
