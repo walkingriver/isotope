@@ -24,18 +24,23 @@
         </div>
         <ion-slides [options]="slideOptions">
           <ion-slide *ngFor="let address of addresses" (click)="selectLocation(address)">
-            <ion-chip>
-              <ion-icon [name]="address.icon"></ion-icon>
-              <ion-label color="light">{{address.name}}, {{address.city}}, {{address.state}}
-              </ion-label>
-            </ion-chip>
+            <ion-card>
+              <ion-item>
+                <ion-icon item-left large [name]="address.icon"></ion-icon>
+                <ion-icon name="more" item-right large></ion-icon> 
+                <h2 color="dark">{{address.name}}</h2>
+                <p>{{address.city}}, {{address.state}}</p>
+              </ion-item>
+            </ion-card>
           </ion-slide>
-          <ion-slide (click)="newLocation()">
-            <ion-chip>
-              <ion-icon name="add"></ion-icon>
-              <ion-label color="light">Create New...
-              </ion-label>
-            </ion-chip>
+          <ion-slide>
+            <ion-card  (click)="newLocation()">
+              <ion-item>
+                <ion-icon name="add-circle" item-left large></ion-icon> 
+                <h2 color="dark">Create New...</h2>
+                <p>If you're someplace else.</p>
+              </ion-item>
+            </ion-card>
           </ion-slide>
         </ion-slides>
       </ion-col>

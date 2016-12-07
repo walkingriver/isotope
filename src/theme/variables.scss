@@ -13,6 +13,13 @@
 $text-color:        #000;
 $background-color:  #fff;
 
+$font-multiplier: 1.5;
+$h1-font-size: $font-multiplier *	2.6rem;	
+$h2-font-size: $font-multiplier *	2.4rem;	
+$h3-font-size: $font-multiplier *	2.2rem;	
+$h4-font-size: $font-multiplier *	2rem;
+$h5-font-size: $font-multiplier *	1.8rem;	
+$h6-font-size: $font-multiplier * 1.6rem;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -31,11 +38,9 @@ $colors: (
 );
 
 
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
-
-
+// // App iOS Variables
+// // --------------------------------------------------
+// // iOS only Sass variables can go here
 
 
 // App Material Design Variables
