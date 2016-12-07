@@ -1,7 +1,10 @@
 {
-  "name": "m1",
-  "app_id": "",
-  "gulpStartupTasks": ["sass", "watch"],
+  "name": "isotope",
+  "app_id": "78a08a55",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
   "v2": true,
   "typescript": true
 }
