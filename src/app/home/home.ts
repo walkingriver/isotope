@@ -16,7 +16,7 @@ export class HomePage {
 
   slideOptions = {
     loop: true,
-    pager: false
+    pager: true
   };
 
   constructor(public navCtrl: NavController, public addressService: AddressService) {
