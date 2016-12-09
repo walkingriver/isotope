@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as _ from 'lodash';
 import { Address, AddressService } from '../core/address-service';
 import { AddressDetailPage } from '../address-detail/address-detail';
 import { NavController, Slides } from 'ionic-angular';
@@ -28,7 +29,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this._addressService.fetchAll().subscribe(data => this.addresses = data);
+    this._addressService.fetchAll().subscribe(data => this.addresses = _.chunk(data, 3));
   }
 
   gotoSetup() {
