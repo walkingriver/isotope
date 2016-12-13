@@ -44,4 +44,12 @@ export class HomePage {
     // Todo: ActionSheet popup
     console.log(address);
   }
+
+  openLocation(address) {
+
+  }
+
+  removeLocation(address) {
+    this._addressService.delete(address);
+  }
 }
