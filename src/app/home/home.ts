@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import * as _ from 'lodash';
 import { Address, AddressService } from '../core/address-service';
-import { AddressDetailPage } from '../address-detail/address-detail';
+import { MapPage, SetupPage } from '../pages';
 import { NavController, Slides } from 'ionic-angular';
-import { SetupPage } from '../setup/setup';
 
 @Component({
   selector: 'page-home',
@@ -41,8 +40,7 @@ export class HomePage {
   }
 
   selectLocation(address) {
-    // Todo: ActionSheet popup
-    console.log(address);
+    this.navigation.push(MapPage)
   }
 
   openLocation(address) {
