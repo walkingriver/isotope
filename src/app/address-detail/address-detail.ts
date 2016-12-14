@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Address } from '../core/address-service';
+import { Address } from '../core/address';
 
 @Component({
   selector: 'page-address-detail',
   templateUrl: 'address-detail.html'
 })
 export class AddressDetailPage {
-  private address: Address;
+  public address: Address;
 
   constructor(public navCtrl: NavController, private navParams: NavParams) {
     this.address = navParams.data.address;

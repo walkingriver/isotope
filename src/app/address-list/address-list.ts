@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Address, AddressService } from '../core/address-service';
+import { AddressService } from '../core/address-service';
+import { Address } from '../core/address';
 import { AddressDetailPage } from '../address-detail/address-detail';
 
 @Component({
@@ -11,7 +12,7 @@ import { AddressDetailPage } from '../address-detail/address-detail';
 export class AddressListPage {
     private _addressService: AddressService;
   private nav: NavController;
-  private addresses: Address[];
+  public addresses: Address[];
 
   constructor(public navCtrl: NavController, public addressService: AddressService) {
     this.nav = navCtrl;

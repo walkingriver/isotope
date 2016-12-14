@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as _ from 'lodash';
-import { Address, AddressService } from '../core/address-service';
+import { AddressService } from '../core/address-service';
+import { Address } from '../core/address';
 import { MapPage, SetupPage } from '../pages';
 import { NavController, Slides } from 'ionic-angular';
 
@@ -12,7 +13,7 @@ import { NavController, Slides } from 'ionic-angular';
 export class HomePage {
   private _addressService: AddressService;
   private navigation: NavController;
-  private addresses: Address[];
+  public addresses: Address[];
 
   slideOptions = {
     loop: true,
