@@ -17,7 +17,6 @@ export class Address {
 
   foo() {
     let result = `${this.address1} ${this.address2} ${this.city}, ${this.state} ${this.zip}`;
-    console.log(result);
     return result;
   }
 }
