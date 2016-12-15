@@ -1,22 +1,29 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { Address } from '../core/address';
+import { GoogleMaps } from '../core/google-maps';
 
-/*
-  Generated class for the Map page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-map',
-  templateUrl: 'map.html'
+  templateUrl: 'map.html',
+  providers: [GoogleMaps]
 })
 export class MapPage {
+  private address: Address;
+  private data: any;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, private navParams: NavParams,
+    private google: GoogleMaps) {
+    this.address = navParams.data.address;
+    console.log(this.address);
+  }
 
   ionViewDidLoad() {
     console.log('Hello MapPage Page');
+    this.google.geocode(this.address)
+      .subscribe(data => {
+        this.data = data
+        console.log(data)
+      });
   }
-
 }

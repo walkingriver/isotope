@@ -1,15 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-
-import { HomePage } from './home/home';
-import { AddressListPage } from './address-list/address-list';
-import { SetupPage } from './setup/setup';
-
+import { AddressListPage, HomePage } from './pages';
 
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 

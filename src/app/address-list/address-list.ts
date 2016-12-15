@@ -10,20 +10,16 @@ import { AddressDetailPage } from '../address-detail/address-detail';
   providers: [AddressService]
 })
 export class AddressListPage {
-    private _addressService: AddressService;
-  private nav: NavController;
   public addresses: Address[];
 
-  constructor(public navCtrl: NavController, public addressService: AddressService) {
-    this.nav = navCtrl;
-    this._addressService = addressService;
+  constructor(private navCtrl: NavController, private addressService: AddressService) {
   }
 
   openDetails(address) {
-    this.nav.push(AddressDetailPage, { address });
+    this.navCtrl.push(AddressDetailPage, { address });
   }
 
   ionViewDidLoad() {
-    this._addressService.fetchAll().subscribe(data => this.addresses = data);
+    this.addressService.fetchAll().subscribe(data => this.addresses = data);
   }
 }
