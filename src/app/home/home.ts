@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 import { AddressService } from '../core/address-service';
 import { Address } from '../core/address';
 import { MapPage, SetupPage } from '../pages';
-import { NavController } from 'ionic-angular';
+import { FabContainer, NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -40,7 +40,8 @@ export class HomePage {
     this.gotoSetup(); // Temp
   }
 
-  selectLocation(address) {
+  selectLocation(address: Address, fab: FabContainer) {
+    fab.close();
     this.navigation.push(MapPage, { address });
   }
 
