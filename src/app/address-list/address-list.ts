@@ -1,55 +1,48 @@
 import { Component } from '@angular/core';
-import * as _ from 'lodash';
 import { AddressService } from '../core/address-service';
 import { Address } from '../core/address';
 import { AddressDetailPage, HomePage, SetupPage } from '../pages';
 import { FabContainer, NavController } from 'ionic-angular';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'page-address-list',
   templateUrl: 'address-list.html',
   providers: [AddressService]
 })
+
 export class AddressListPage {
-  private _addressService: AddressService;
-  private navigation: NavController;
   public addresses: Address[];
 
-  slideOptions = {
-    loop: true,
-    pager: true
-  };
-
-  constructor(public navCtrl: NavController, public addressService: AddressService) {
-    this.navigation = navCtrl;
-    this._addressService = addressService;
-  }
-
-  ngOnInit() {
+  constructor(public navCtrl: NavController, private addressService: AddressService) {
   }
 
   ionViewDidLoad() {
-    this._addressService.fetchAll().subscribe(data => this.addresses = _.chunk(data, 3));
+    this.addressService.fetchAll().subscribe(data => this.addresses = _.chunk(data, 3));
   }
 
-  gotoSetup() {
-    this.navigation.push(SetupPage)
+  gotoSetup(fab) {
+    fab.close();
+    this.navCtrl.push(SetupPage)
   }
 
-  newLocation() {
-    this.gotoSetup(); // Temp
+  newLocation(fab: FabContainer) {
+    fab.close();
+    this.navCtrl.push(AddressDetailPage, { address: new Address() });
   }
 
   selectLocation(address: Address, fab: FabContainer) {
     fab.close();
-    this.navigation.push(HomePage, { address });
+    this.navCtrl.push(HomePage, { address });
   }
 
-  openLocation(address) {
-
+  openLocation(address: Address, fab: FabContainer) {
+    fab.close();
+    this.navCtrl.push(AddressDetailPage, { address });
   }
 
-  removeLocation(address) {
-    this._addressService.delete(address);
+  removeLocation(address: Address, fab: FabContainer) {
+    fab.close();
+    this.addressService.delete(address);
   }
 }

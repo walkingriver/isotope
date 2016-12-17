@@ -46,7 +46,7 @@ export class HomePage {
 
   gotoSetup(fab: FabContainer) {
     fab.close();
-    this.navCtrl.setRoot(SetupPage);
+    this.navCtrl.push(SetupPage);
   }
 
   gotoLocations(fab: FabContainer) {
