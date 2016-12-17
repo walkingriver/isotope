@@ -26,9 +26,13 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-    this.lat = 28.3123066;
-    this.lng = -81.55414720000002;
-    this.label = "X";
+    if (! this.address) {
+      this.google.getCurrentLocation()
+        .subscribe(data => {
+          this.lat = data.location.lat;
+          this.lng = data.location.lng;
+        });
+    }
   }
 
   ionViewDidLoad() {

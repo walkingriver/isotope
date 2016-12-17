@@ -23,6 +23,14 @@ export class GoogleMaps {
       .catch(this.handleError);
   }
 
+  getCurrentLocation() {
+    const url = `${googleApps.geolocationUrl}&key=${googleApps.apiKey}`;
+    console.log(url);
+    return this.http.post(url, {})
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
   handleError(error) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
