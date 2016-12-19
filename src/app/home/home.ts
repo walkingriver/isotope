@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import * as _ from 'lodash';
 import { AddressService } from '../core/address-service';
 import { Address } from '../core/address';
-import { AddressListPage, MapPage, SetupPage } from '../pages';
+import { AddressListPage, SetupPage } from '../pages';
 import { FabContainer, NavController, NavParams } from 'ionic-angular';
 import { GoogleMaps } from '../core/google-maps';
 
