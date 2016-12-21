@@ -7,6 +7,8 @@
   "scripts": {
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
+    "ionic:clean": "ionic-app-scripts clean",
+    "ionic:copy": "ionic-app-scripts copy",
     "watch-electron": "npm-run-all -p serve-no-browser start-watch-electron",
     "start-watch-electron": "WATCH=true electron .",
     "electron": "npm run build && electron ."
@@ -35,7 +37,7 @@
     "zone.js": "^0.6.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.47",
+    "@ionic/app-scripts": "0.0.48",
     "npm-run-all": "^3.1.1",
     "typescript": "2.0.9"
   },
