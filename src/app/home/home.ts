@@ -25,7 +25,7 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-    if (! this.address) {
+    if (!this.address) {
       this.google.getCurrentLocation()
         .subscribe(data => {
           this.lat = data.location.lat;
@@ -39,7 +39,7 @@ export class HomePage {
       this.google.geocode(this.address)
         .subscribe(data => {
           this.data = data.results["0"].geometry.location;
-          console.log(this.data);
+          console.log(data.results["0"]);
           this.lat = this.data.lat;
           this.lng = this.data.lng;
           this.label = this.address.name;
@@ -49,11 +49,15 @@ export class HomePage {
 
   gotoSetup(fab: FabContainer) {
     fab.close();
-    this.navCtrl.push(SetupPage);
+    this.navCtrl.push(SetupPage, {}, { animate: true, direction: 'forward' });
   }
 
   gotoLocations(fab: FabContainer) {
     fab.close();
-    this.navCtrl.setRoot(AddressListPage);
+    this.navCtrl.setRoot(AddressListPage, {}, { animate: true, direction: 'forward' });
+  }
+
+  fabColor() {
+    return this.address ? "primary" : "danger";
   }
 }

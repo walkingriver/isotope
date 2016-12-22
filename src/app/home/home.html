@@ -16,13 +16,28 @@
 
 <ion-content>
   <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-    <sebm-google-map-marker [latitude]="lat" [longitude]="lng" [title]="label"></sebm-google-map-marker>
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng">
+      <sebm-google-map-info-window [disableAutoPan]="true">
+        <div *ngIf="address">
+          <strong>
+            Current Location:
+          </strong> <br/> {{address.foo()}}
+        </div>
+        <div *ngIf="!address">
+          <strong>Not protected</strong><br/> Current location (estimated)
+        </div>
+      </sebm-google-map-info-window>
+    </sebm-google-map-marker>
   </sebm-google-map>
-        <ion-fab top left #fab>
-          <button ion-fab color="primary"><ion-icon name="more"></ion-icon></button>
-          <ion-fab-list side="right">
-            <button ion-fab (click)="gotoSetup(fab)"><ion-icon name="cog"></ion-icon></button>
-            <button ion-fab (click)="gotoLocations(fab)"><ion-icon name="locate"></ion-icon></button>
-          </ion-fab-list>
-        </ion-fab>
+  <ion-fab top left #fab>
+    <button ion-fab [color]="fabColor()"><ion-icon name="more"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab (click)="gotoSetup(fab)"><ion-icon name="cog"></ion-icon></button>
+      <button ion-fab (click)="gotoLocations(fab)"><ion-icon name="locate"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  <div class="wr-well wr-float">
+    <h1 *ngIf="address">Congratulations - You're protected!</h1>
+    <h1 *ngIf="!address" class="danger">Please set your current location.</h1>
+  </div>
 </ion-content>

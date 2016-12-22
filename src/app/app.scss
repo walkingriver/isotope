@@ -19,9 +19,24 @@ $baseFontSize: 2em;
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-h1,h2,h3,h4,h5,h6 {
-  color: #fff;
-  text-shadow: 0 0 1px rgba(0,0,0,.6);
+.wr-well {
+    text-align: center;
+    margin: auto;
+    max-width: 800px;
+    padding: 20px 15px 0;
+
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,.6);
+  }
+}
+
+.wr-float {
+  position: absolute;
+  top: 25px;
+  left: 15%;
+  right: 15%;
+  background-color: transparent;
 }
 
 // h1 {
@@ -42,10 +57,3 @@ h1,h2,h3,h4,h5,h6 {
 // h6 {
 //   font-size: $baseFontSize - 10;
 // }
-
-.wr-well {
-  text-align: center;
-    margin: auto;
-    max-width: 800px;
-    padding: 20px 15px 0;
-    }
