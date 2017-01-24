@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { AddressDetailPage, AddressListPage,  HomePage, MapPage, SetupPage } from './pages';
+import { AddressDetailPage, AddressListPage,  HomePage, SetupPage } from './pages';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
@@ -10,7 +10,6 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     AddressDetailPage,
     AddressListPage,
     HomePage,
-    MapPage,
     SetupPage,
   ],
   imports: [
@@ -23,7 +22,6 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     AddressDetailPage,
     AddressListPage,
     HomePage,
-    MapPage,
     SetupPage
   ],
   providers: []

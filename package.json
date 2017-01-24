@@ -10,13 +10,15 @@
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
     "ionic:copy": "ionic-app-scripts copy",
+    "gen-page": "ionic generate --pagesDir src/app page",
+    "gen-provider": "ionic generate --providersDir src/app/core' provider",
     "watch-electron": "npm-run-all -p serve-no-browser start-watch-electron",
     "start-watch-electron": "WATCH=true electron .",
     "electron": "npm run build && electron ."
   },
   "version": "0.0.1",
   "engines": {
-    "node": "6.9.2"
+    "node": "6.9.4"
   },
   "dependencies": {
     "@angular/common": "2.2.1",
@@ -32,7 +34,7 @@
     "angular": "^1.6.0",
     "angular2-google-maps": "0.15.0",
     "electron": "^1.4.5",
-    "ionic-angular": "2.0.0-rc.4",
+    "ionic-angular": "2.0.0-rc.5",
     "ionic-native": "2.2.11",
     "ionicons": "3.0.0",
     "lodash": "^4.17.2",
