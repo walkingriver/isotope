@@ -3,7 +3,6 @@ import { AddressService } from '../core/address-service';
 import { Address } from '../core/address';
 import { AddressDetailPage, HomePage, SetupPage } from '../pages';
 import { FabContainer, NavController } from 'ionic-angular';
-import * as _ from 'lodash';
 
 @Component({
   selector: 'page-address-list',
@@ -12,13 +11,13 @@ import * as _ from 'lodash';
 })
 
 export class AddressListPage {
-  public addresses: Address[];
+  public addresses: Promise<Address[]>;
 
   constructor(public navCtrl: NavController, private addressService: AddressService) {
   }
 
   ionViewDidLoad() {
-    this.addressService.fetchAll().subscribe(data => this.addresses = _.chunk(data, 3));
+    this.addresses = this.addressService.fetchAll();
   }
 
   gotoSetup(fab) {
