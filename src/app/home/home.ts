@@ -4,6 +4,7 @@ import { Address } from '../core/address';
 import { AddressListPage, SetupPage } from '../pages';
 import { FabContainer, NavController, NavParams } from 'ionic-angular';
 import { GoogleMaps } from '../core/google-maps';
+import { app } from '../core/config';
 
 @Component({
   selector: 'page-home',

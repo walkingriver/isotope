@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Setup
+      {{title}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -12,13 +12,15 @@
       <ion-col width-80 offset-10>
         <div class="wr-well">
           <h1>Go Far - Stay Safe</h1>
-          <h6>Before you begin, we need your phone extension.</h6>
+          <h6>Before you begin, we need your name and phone number.</h6>
         </div>
         <ion-list>
           <ion-item>
+            <ion-input type="text" placeholder="Name" (value)="name">
+            </ion-input>
             <ion-input type="text" placeholder="Extension" (value)="extension">
             </ion-input>
-            <button ion-button outline item-right icon-right (click)="setExtension()">
+            <button ion-button outline item-right icon-right (click)="setInfo()">
       Set
       <ion-icon name="arrow-forward"></ion-icon>
     </button>
@@ -27,4 +29,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>

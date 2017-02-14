@@ -38,22 +38,7 @@ body {
   right: 15%;
   background-color: transparent;
 }
-
-// h1 {
-//   font-size: $baseFontSize;
-// }
-// h2 {
-//   font-size: $baseFontSize - 2;
-// }
-// h3 {
-//   font-size: $baseFontSize - 4;
-// }
-// h4 {
-//   font-size: $baseFontSize - 6;
-// }
-// h5 {
-//   font-size: $baseFontSize - 8;
-// }
-// h6 {
-//   font-size: $baseFontSize - 10;
-// }
+ ion-content {
+     background: url(../assets/images/sentrybackgndlitered.jpg) no-repeat center center fixed;
+     background-size: cover;
+}

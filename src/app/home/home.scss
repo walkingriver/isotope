@@ -3,4 +3,11 @@ page-home {
     height: 100%;
     width: 100%;
   }
+
+  .wr-well{
+      h1,h2,h3,h4,h5,h6 {
+      color: #000;
+      text-shadow: 2px 2px 5px rgba(255,255,255,.6);
+    }
+  }
 }
