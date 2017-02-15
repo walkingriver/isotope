@@ -4,17 +4,18 @@
     <h6>Make sure emergency services can always find you. Select your current location below.</h6>
   </div>
   <ion-card *ngFor="let address of addresses | async">
-    <ion-item (click)="selectLocation(address, fab)">
+    <ion-item>
       <ion-fab right edge #fab>
         <button ion-fab mini color="light"><ion-icon name="more"></ion-icon></button>
         <ion-fab-list side="left">
+          <button ion-fab (click)="selectLocation(address, fab)"><ion-icon name="locate"></ion-icon></button>
           <button ion-fab (click)="openLocation(address, fab)"><ion-icon name="build"></ion-icon></button>
           <button ion-fab (click)="removeLocation(address, fab)"><ion-icon name="trash"></ion-icon></button>
         </ion-fab-list>
       </ion-fab>
       <ion-icon item-left large [name]="address.icon"></ion-icon>
-      <h2 color="dark">{{address.name}}</h2>
-      <p>{{address.foo()}}<br /> Last Selected: {{address.lastUsed}}</p>
+      <strong color="dark">{{address.name}}</strong>
+      <p>{{address.toString()}}<br /> Last Selected: {{address.lastUsed}}</p>
     </ion-item>
   </ion-card>
   <ion-fab left bottom #fab>

@@ -15,7 +15,7 @@ export class GoogleMaps {
   }
 
   geocode(address: Address) {
-    const encodedAddress = encodeURIComponent(address.foo());
+    const encodedAddress = encodeURIComponent(address.toString());
     const url = `${googleApps.geocodeUrl}address=${encodedAddress}&key=${googleApps.apiKey}`;
     console.log(url);
     return this.http.get(url)

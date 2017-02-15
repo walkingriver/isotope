@@ -15,7 +15,7 @@ export class Address {
 
   }
 
-  foo() {
+  toString() : string {
     let result = `${this.address1} ${this.address2} ${this.city}, ${this.state} ${this.zip}`;
     return result;
   }

@@ -12,6 +12,9 @@ import { FabContainer, NavController } from 'ionic-angular';
 
 export class AddressListPage {
   public addresses: Promise<Address[]>;
+  home = HomePage;
+  setup = SetupPage;
+  detail = AddressDetailPage;
 
   constructor(public navCtrl: NavController, private addressService: AddressService) {
   }
