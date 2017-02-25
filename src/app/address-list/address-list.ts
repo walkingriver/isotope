@@ -12,25 +12,12 @@ import { FabContainer, NavController } from 'ionic-angular';
 
 export class AddressListPage {
   public addresses: Promise<Address[]>;
-  home = HomePage;
-  setup = SetupPage;
-  detail = AddressDetailPage;
 
   constructor(public navCtrl: NavController, private addressService: AddressService) {
   }
 
   ionViewDidLoad() {
     this.addresses = this.addressService.fetchAll();
-  }
-
-  gotoSetup(fab) {
-    fab.close();
-    this.navCtrl.push(SetupPage)
-  }
-
-  newLocation(fab: FabContainer) {
-    fab.close();
-    this.navCtrl.push(AddressDetailPage, { address: new Address() });
   }
 
   selectLocation(address: Address, fab: FabContainer) {
@@ -41,6 +28,11 @@ export class AddressListPage {
   openLocation(address: Address, fab: FabContainer) {
     fab.close();
     this.navCtrl.push(AddressDetailPage, { address });
+  }
+
+  newLocation(fab: FabContainer) {
+    fab.close();
+    this.navCtrl.push(AddressDetailPage, { address: new Address() });
   }
 
   removeLocation(address: Address, fab: FabContainer) {
