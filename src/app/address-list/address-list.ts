@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AddressService } from '../core/address-service';
 import { Address } from '../core/address';
-import { AddressDetailPage, HomePage, SetupPage } from '../pages';
+import { AddressDetailPage, HomePage } from '../pages';
 import { FabContainer, NavController } from 'ionic-angular';
 
 @Component({

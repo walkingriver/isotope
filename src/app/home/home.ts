@@ -12,11 +12,12 @@ import { GoogleMaps } from '../core/google-maps';
 })
 export class HomePage {
   private address: Address;
-  private data: any;
-  lat = 0;
-  lng = 0;
+  defaultMapInfo = {
+    lat: 0,
+    lng: 0
+  };
   zoom = 18;
-  label = '';
+  located = false;
 
   constructor(public navCtrl: NavController, private navParams: NavParams,
     private google: GoogleMaps) {
@@ -25,11 +26,11 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-    if (!this.address) {
+    if (!this.located) {
       this.google.getCurrentLocation()
         .subscribe(data => {
-          this.lat = data.location.lat;
-          this.lng = data.location.lng;
+          this.defaultMapInfo.lat = data.location.lat;
+          this.defaultMapInfo.lng = data.location.lng;
         });
     }
   }
@@ -38,13 +39,21 @@ export class HomePage {
     if (this.address) {
       this.google.geocode(this.address)
         .subscribe(data => {
-          this.data = data.results["0"].geometry.location;
+          this.located = true;
           console.log(data.results["0"]);
-          this.lat = this.data.lat;
-          this.lng = this.data.lng;
-          this.label = this.address.name;
+          let loc = data.results["0"].geometry.location;
+          this.address.latitude = loc.lat;
+          this.address.longitude = loc.lng;
         });
     }
+  }
+
+  getLatitude() {
+    return this.located ? this.address.latitude : this.defaultMapInfo.lat;
+  }
+
+  getLongitude() {
+    return this.located ? this.address.longitude : this.defaultMapInfo.lng;
   }
 
   gotoSetup(fab: FabContainer) {
