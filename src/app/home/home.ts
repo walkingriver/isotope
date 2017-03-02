@@ -11,7 +11,7 @@ import { GoogleMaps } from '../core/google-maps';
   providers: [AddressService, GoogleMaps]
 })
 export class HomePage {
-  private address: Address;
+  address: Address;
   defaultMapInfo = {
     lat: 0,
     lng: 0
